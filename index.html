@@ -221,6 +221,19 @@
   .cell-role:last-child { border-bottom: none; }
   .cell-role.fukite { background: rgba(52,152,219,0.04); }
   .cell-role.temoto { background: rgba(39,174,96,0.04); }
+  .cell-info {
+    font-size: 10px;
+    color: #c0392b;
+    padding: 1px 3px;
+    border-bottom: 1px dashed #f0c8c8;
+    background: rgba(231, 76, 60, 0.06);
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  .cell-info.memo { color: #555; background: rgba(149,165,166,0.08); border-color:#e0e0e0; font-weight: normal; }
 
   /* Worker chip */
   .chip {
@@ -756,6 +769,8 @@ function renderBoard() {
         // Only one big area for rest
         html += '<div class="cell-role" data-role="fukite" style="border-bottom:none;min-height:60px">'+renderChips(cell.fukite||[],'fukite')+renderChips(cell.temoto||[],'temoto')+'</div>';
       } else {
+        if (cell.site) html += '<div class="cell-info" title="'+escapeHtml(cell.site)+'">📍 '+escapeHtml(cell.site)+'</div>';
+        if (cell.memo) html += '<div class="cell-info memo" title="'+escapeHtml(cell.memo)+'">📝 '+escapeHtml(cell.memo)+'</div>';
         html += '<div class="cell-role fukite" data-role="fukite">'+renderChips(cell.fukite||[],'fukite')+'</div>';
         html += '<div class="cell-role temoto" data-role="temoto">'+renderChips(cell.temoto||[],'temoto')+'</div>';
       }
@@ -1011,6 +1026,30 @@ function removeWorkerFromCell(date, col, workerId) {
     delete w.cells[key];
   }
 }
+
+function saveCellInfo() {
+  if (!sheetCtx) return;
+  var siteInput = document.getElementById('cellSiteInput');
+  var memoInput = document.getElementById('cellMemoInput');
+  if (!siteInput || !memoInput) return;
+  var siteVal = siteInput.value.trim();
+  var memoVal = memoInput.value.trim();
+  var w = getWeek();
+  var key = sheetCtx.date + '_' + sheetCtx.col;
+  if (!w.cells[key]) w.cells[key] = {fukite:[], temoto:[]};
+  w.cells[key].site = siteVal;
+  w.cells[key].memo = memoVal;
+  if ((!w.cells[key].fukite || w.cells[key].fukite.length===0) &&
+      (!w.cells[key].temoto || w.cells[key].temoto.length===0) &&
+      !siteVal && !memoVal && !w.cells[key].company && !w.cells[key].car) {
+    delete w.cells[key];
+  }
+  pushHistory(formatDate(sheetCtx.date)+'の'+colDisplayName(sheetCtx.col)+'の現場名・メモを更新');
+  save();
+  toast('保存しました');
+  render();
+}
+window.saveCellInfo = saveCellInfo;
 function moveWorker(from, toDate, toCol, toRole) {
   // Same day requirement: original disallows cross-day move via drag. Keep that.
   if (from.fromDate && from.fromDate !== toDate && !from.fromPool) {
@@ -1137,6 +1176,13 @@ function openCellSheet(date, col) {
 
   if (c.type !== 'REST') {
     html += '<div style="margin-bottom:8px;text-align:center;color:#888;font-size:11px;">タップで配置／長押しドラッグで移動・入れ替え</div>';
+    html += '<div style="background:#fff8e1;border:1px solid #ffd54f;border-radius:6px;padding:8px;margin-bottom:10px;">';
+    html += '<label style="display:block;font-size:12px;color:#555;font-weight:bold;margin-bottom:3px;">📍 現場名</label>';
+    html += '<input type="text" id="cellSiteInput" value="'+escapeHtml(cell.site||'')+'" placeholder="例:八条口マンション" style="width:100%;padding:6px;font-size:13px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;">';
+    html += '<label style="display:block;font-size:12px;color:#555;font-weight:bold;margin:6px 0 3px;">📝 メモ</label>';
+    html += '<textarea id="cellMemoInput" placeholder="そのセルのメモ" style="width:100%;padding:6px;font-size:13px;border:1px solid #ccc;border-radius:4px;min-height:50px;font-family:inherit;box-sizing:border-box;">'+escapeHtml(cell.memo||'')+'</textarea>';
+    html += '<button class="sheet-btn primary" style="margin-top:6px;" onclick="saveCellInfo()">💾 現場名・メモを保存</button>';
+    html += '</div>';
   }
 
   // Current assignment
