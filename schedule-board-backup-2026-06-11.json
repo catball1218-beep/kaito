@@ -1,0 +1,242 @@
+{
+  "workers": [
+    {
+      "id": "w001",
+      "name": "山口",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w002",
+      "name": "秋保",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w003",
+      "name": "井延",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w004",
+      "name": "今福",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w005",
+      "name": "長谷川",
+      "type": "MOKUZOU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w006",
+      "name": "石橋",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w007",
+      "name": "太秦",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w008",
+      "name": "高山",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w009",
+      "name": "田中",
+      "type": "MOKUZOU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w010",
+      "name": "長谷",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w011",
+      "name": "花岡",
+      "type": "MOKUZOU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w012",
+      "name": "速見",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w013",
+      "name": "森下",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w014",
+      "name": "山下",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w015",
+      "name": "山本",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w016",
+      "name": "ゲリロ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w017",
+      "name": "ノベルト",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w018",
+      "name": "ホセ",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w019",
+      "name": "メルビン",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w020",
+      "name": "ガピト",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w021",
+      "name": "アルチ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w022",
+      "name": "ハリー",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w023",
+      "name": "ロニエ",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w024",
+      "name": "ソルニト",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w025",
+      "name": "レミー",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w026",
+      "name": "マイケン",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w027",
+      "name": "レジー",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w028",
+      "name": "ドナルド",
+      "type": "MOKUZOU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w029",
+      "name": "メディナ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w030",
+      "name": "ウィスヌ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w031",
+      "name": "ファズリ",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    },
+    {
+      "id": "w032",
+      "name": "ラマ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w033",
+      "name": "ナイ",
+      "type": "KENCHIKU",
+      "role": "TEMOTO"
+    },
+    {
+      "id": "w034",
+      "name": "斉藤",
+      "type": "KENCHIKU",
+      "role": "FUKITE"
+    }
+  ],
+  "weeks": {
+    "2026-06-08": {
+      "columns": {},
+      "cells": {},
+      "memos": []
+    }
+  },
+  "history": [
+    {
+      "time": "2026-06-11T10:36:15.714Z",
+      "text": "6/8(月)の建築 1の現場名・メモを更新"
+    },
+    {
+      "time": "2026-06-11T10:36:13.111Z",
+      "text": "6/8(月)の建築 1の速見を未配置に戻す"
+    },
+    {
+      "time": "2026-06-11T10:36:12.528Z",
+      "text": "6/8(月)の建築 1の山口を未配置に戻す"
+    },
+    {
+      "time": "2026-06-11T10:36:06.098Z",
+      "text": "6/8(月)の建築 1の現場名・メモを更新"
+    },
+    {
+      "time": "2026-06-11T10:35:56.117Z",
+      "text": "6/8(月)の建築 1に速見を配置"
+    },
+    {
+      "time": "2026-06-11T10:35:54.803Z",
+      "text": "6/8(月)の建築 1に山口を配置"
+    }
+  ],
+  "currentGroup": "KENCHIKU"
+}
